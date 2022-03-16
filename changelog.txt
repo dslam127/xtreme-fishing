@@ -1,0 +1,26 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+Date: 2022-03-15
+  Changes:
+    - Added settings to adjust what pufferfish smelts to and how much
+    - Removed setting for coal quantity
+    - Updated locale/en
+  Bugfixes:
+    - Set water ingredient max from 1000 to 500
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2022-03-15
+  Changes:
+    - Balanced fish farm to produce random fish of type instead of a percentage of each
+    - Added ability to cook all fish types using the cooked-fish mod 
+    - Added ability to produce "more-fish" in the fish farm
+    - Added support for Fish_Lube mod to allow multiple types of fish
+    - Added recipe extract light oil from squid
+    - Added recipe extract petroleum-gas from pufferfish
+    - Added recipe smelting pufferfish results in coal (amount can be changed in settings)
+    - Added pipes from abandoned mod "Plumbing" by Adamo
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2022-03-14
+  Changes:
+    - Initial release on mod portal
