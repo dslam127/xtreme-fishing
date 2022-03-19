@@ -1,5 +1,11 @@
 data:extend({
   {
+    type = "bool-setting",
+    name = "xtreme-fishing-enablepipes",
+    setting_type = "startup",
+    default_value = true,
+  },
+  {
     type = "int-setting",
     name = "xtreme-fishing-ugpipestart",
     setting_type = "startup",
