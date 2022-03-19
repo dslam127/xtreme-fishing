@@ -1,7 +1,7 @@
 
 {
 	"name": "xtreme-fishing",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"title": "Xtreme Fishing",
 	"description": "This mod combines several existing fish mods and makes them co-exist flawlessly.",
 	"author": "xXtremeSlayerXx",
@@ -12,7 +12,8 @@
     "? more-fish",
     "? repair-fish",
     "? factorio-cooked-fish",
-    "? Fish_Lube"
+    "? Fish_Lube",
+    "? modmashsplinterfishing"
   ],
 	"factorio_version": "1.1"
 }

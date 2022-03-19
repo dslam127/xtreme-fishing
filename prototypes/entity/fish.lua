@@ -3,12 +3,24 @@ local sounds = require ("__base__.prototypes.entity.sounds")
 -- rename fish to coincide with more-fishes
 local crab = table.deepcopy(data.raw["capsule"]["af-crab"])
 crab.name = "raw-crab"
+crab.icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-crab.png"
+crab.icon_mipmaps = 4
+crab.icon_size = 64
 local tropical = table.deepcopy(data.raw["capsule"]["af-tropical"])
 tropical.name = "raw-tropical"
+tropical.icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-tropical.png"
+tropical.icon_mipmaps = 4
+tropical.icon_size = 64
 local squid = table.deepcopy(data.raw["capsule"]["af-squid"])
 squid.name = "raw-squid"
+squid.icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-squid.png"
+squid.icon_mipmaps = 4
+squid.icon_size = 64
 local salmon = table.deepcopy(data.raw["capsule"]["af-salmon"])
 salmon.name = "raw-salmon"
+salmon.icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-salmon.png"
+salmon.icon_mipmaps = 4
+salmon.icon_size = 64
 
 data:extend({
   crab,
@@ -17,8 +29,9 @@ data:extend({
   {
     type = "fish",
     name = "crab",
-    icon = "__Advanced_Fishing__/graphics/fishes/crab.png",
-    icon_size = 128,
+    icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-crab.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
     flags = {"placeable-neutral", "not-on-map"},
     minable = {mining_time = 0.4, result = "raw-crab", count = 5},
     mined_sound = sounds.mine_fish,
@@ -66,8 +79,9 @@ data:extend({
   {
     type = "fish",
     name = "tropical",
-    icon = "__Advanced_Fishing__/graphics/fishes/tropical.png",
-    icon_size = 128,
+    icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-tropical.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
     flags = {"placeable-neutral", "not-on-map"},
     minable = {mining_time = 0.4, result = "raw-tropical", count = 5},
     mined_sound = sounds.mine_fish,
@@ -109,8 +123,9 @@ data:extend({
   {
     type = "fish",
     name = "squid",
-    icon = "__Advanced_Fishing__/graphics/fishes/squid.png",
-    icon_size = 128,
+    icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-squid.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
     flags = {"placeable-neutral", "not-on-map"},
     minable = {mining_time = 0.4, result = "raw-squid", count = 5},
     mined_sound = sounds.mine_fish,
@@ -161,8 +176,9 @@ if not mods["more-fish"] then
     {
       type = "fish",
       name = "salmon",
-      icon = "__Advanced_Fishing__/graphics/fishes/salmon.png",
-      icon_size = 128,
+      icon = "__xtreme-fishing__/graphics/icons/" .. "fish/af-salmon.png",
+      icon_size = 64,
+      icon_mipmaps = 4,
       flags = {"placeable-neutral", "not-on-map"},
       minable = {mining_time = 0.4, result = "raw-salmon", count = 5},
       mined_sound = sounds.mine_fish,
@@ -201,5 +217,5 @@ if not mods["more-fish"] then
         }
       }
     }
-  })
+  }) 
 end

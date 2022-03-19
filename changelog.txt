@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.7
+Date: 2022-03-19
+  Changes:
+    - Added mipmaps for fish for better compatibilty
+    - Added support for modmashsplinterfishing
+---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2022-03-19
   Changes:
