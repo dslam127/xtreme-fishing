@@ -1,12 +1,13 @@
 
 {
 	"name": "xtreme-fishing",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"title": "Xtreme Fishing",
 	"description": "This mod combines several existing fish mods and makes them co-exist flawlessly.",
 	"author": "xXtremeSlayerXx",
   "dependencies": [
     "base >= 1.1.0",
+    "flib >= 0.10.1",
     "Advanced_Fishing",
     
     "? more-fish",

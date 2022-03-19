@@ -1,15 +1,13 @@
-Version: 0.1.8
-Date: 2022-3-20
-  Changes:
-    - With modmashsplinterfishing farm cycle recipe uses their ingredients
-    - Added setting to adjust yield from fish farm cycle
-    - Updated locale/en
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.7
-Date: 2022-03-19
+Version: 0.1.8
+Date: 2022-3-19
   Changes:
+    - Added dependency flib
+    - Added auto calculation of ingredients for production cycle
+    - Added setting to adjust yield from production cycle
     - Added fishy mipmaps for better compatibilty
     - Added support for modmashsplinterfishing
+    - Updated locale/en
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2022-03-19
