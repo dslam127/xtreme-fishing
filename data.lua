@@ -16,6 +16,10 @@ if mods["Fish_Lube"] then
   require("prototypes.mods.fish_lube")
 end
 
+if mods["modmashsplinterfishing"] then
+  require("prototypes.mods.modmashsplinterfishing")
+end
+
 -- Pipes from abandoned mod "Plumbing", thank you Adamo!
 if (settings.startup["xtreme-fishing-enablepipes"].value == true) then
   require("prototypes.entity.adamo-pipes")

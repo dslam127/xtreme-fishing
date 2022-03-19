@@ -30,6 +30,14 @@ data:extend({
     maximum_value = 500,
   },
   {
+    type = "int-setting",
+    name = "xtreme-fishing-yieldpercycle",
+    setting_type = "startup",
+    default_value = 40,
+    minimum_value = 1,
+    maximum_value = 100,
+  },
+  {
     type = "string-setting",
     name = "xtreme-fishing-puffer_type",
     setting_type = "startup",
