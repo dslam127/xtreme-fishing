@@ -17,6 +17,6 @@ if mods["Fish_Lube"] then
 end
 
 -- Pipes from abandoned mod "Plumbing", thank you Adamo!
-if (settings.startup["xtreme-fishing-waterpercycle"].value == true) then
+if (settings.startup["xtreme-fishing-enablepipes"].value == true) then
   require("prototypes.entity.adamo-pipes")
 end
