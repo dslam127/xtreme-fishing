@@ -6,7 +6,7 @@ recipe.ingredients = {
 recipe.results = {
   { type = "item", name = "raw-fish", amount = 1, probability = 0.30 },	
   { type = "item", name = "raw-salmon", amount = 1, probability = 0.20 },
-  { type = "item", name = "raw-flounder", amount = 1, probability = 0.25 },
+  { type = "item", name = "raw-tropical", amount = 1, probability = 0.25 },
   { type = "item", name = "raw-crab", amount = 1, probability = 0.15 },
   { type = "item", name = "raw-squid", amount = 1, probability = 0.10 }
 }

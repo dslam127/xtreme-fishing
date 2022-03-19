@@ -12,12 +12,12 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "cooked-flounder",
+    name = "cooked-tropical",
     category = "smelting",
     energy_required = 16,
     enabled = true,
     ingredients = {
-      { "raw-flounder", 1 }
+      { "raw-tropical", 1 }
     },
     result = "cooked-fish"
   },

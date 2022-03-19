@@ -3,8 +3,8 @@ local sounds = require ("__base__.prototypes.entity.sounds")
 -- rename fish to coincide with more-fishes
 local crab = table.deepcopy(data.raw["capsule"]["af-crab"])
 crab.name = "raw-crab"
-local flounder = table.deepcopy(data.raw["capsule"]["af-tropical"])
-flounder.name = "raw-flounder"
+local tropical = table.deepcopy(data.raw["capsule"]["af-tropical"])
+tropical.name = "raw-tropical"
 local squid = table.deepcopy(data.raw["capsule"]["af-squid"])
 squid.name = "raw-squid"
 local salmon = table.deepcopy(data.raw["capsule"]["af-salmon"])
@@ -12,7 +12,7 @@ salmon.name = "raw-salmon"
 
 data:extend({
   crab,
-  flounder,
+  tropical,
   squid,
   {
     type = "fish",
@@ -65,15 +65,15 @@ data:extend({
   },
   {
     type = "fish",
-    name = "flounder",
+    name = "tropical",
     icon = "__Advanced_Fishing__/graphics/fishes/tropical.png",
     icon_size = 128,
     flags = {"placeable-neutral", "not-on-map"},
-    minable = {mining_time = 0.4, result = "raw-flounder", count = 5},
+    minable = {mining_time = 0.4, result = "raw-tropical", count = 5},
     mined_sound = sounds.mine_fish,
     max_health = 20,
     subgroup = "creatures",
-    order = "b-a-flounder",
+    order = "b-a-tropical",
     collision_box = {{-0.75, -0.75}, {0.75, 0.75}},
     selection_box = {{-0.5, -0.3}, {0.5, 0.3}},
     pictures =
@@ -93,7 +93,7 @@ data:extend({
     },
     autoplace =
     {
-      order = "x-flounder",
+      order = "x-tropical",
       peaks =
       {
         {

@@ -43,14 +43,14 @@ data:extend({
     },
     {
       type = "recipe",
-      name = "lubrification-flounder",
+      name = "lubrification-tropical",
       category = "chemistry",
       enabled = false,
       energy_required = 5,
       icon = "__Advanced_Fishing__/graphics/fishes/tropical.png",
       icon_size = 128,
       ingredients = {
-        {type = "item", name = "raw-flounder", amount = 1}
+        {type = "item", name = "raw-tropical", amount = 1}
       },
       results = {
         { type = "fluid", name = "lubricant", amount = settings.startup["xtreme-fishing-fishlube"].value}
@@ -171,13 +171,13 @@ data:extend({
 })
 
 table.insert(data.raw["technology"]["lubricant"].effects, {type = "unlock-recipe", recipe = "lubrification-salmon"})
-table.insert(data.raw["technology"]["lubricant"].effects, {type = "unlock-recipe", recipe = "lubrification-flounder"})
+table.insert(data.raw["technology"]["lubricant"].effects, {type = "unlock-recipe", recipe = "lubrification-tropical"})
 table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-recipe", recipe = "lubrification-squid"})
 table.insert(data.raw["technology"]["plastics"].effects, {type = "unlock-recipe", recipe = "lubrification-crab"})
 
--- change the exorbant amount to only 10 lubricant from fish
+-- amount of lubricant produced per fish from settings
 local recipe = table.deepcopy(data.raw["recipe"]["fish-lubification"])
-recipe.results = {{ type = "fluid", name = "lubricant", amount = 10 }}
+recipe.results = {{ type = "fluid", name = "lubricant", amount = settings.startup["xtreme-fishing-fishlube"].value }}
 data:extend({recipe})
  
 
