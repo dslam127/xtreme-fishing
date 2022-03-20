@@ -5,8 +5,8 @@ data:extend({
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__Advanced_Fishing__/graphics/fishes/salmon.png",
-      icon_size = 128,
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/salmon-lube.png",
+      icon_size = 64,
       ingredients = {
         {type = "item", name = "raw-salmon", amount = 1}
       },
@@ -47,8 +47,8 @@ data:extend({
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__Advanced_Fishing__/graphics/fishes/tropical.png",
-      icon_size = 128,
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/tropical-lube.png",
+      icon_size = 64,
       ingredients = {
         {type = "item", name = "raw-tropical", amount = 1}
       },
@@ -89,8 +89,8 @@ data:extend({
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__Advanced_Fishing__/graphics/fishes/squid.png",
-      icon_size = 128,
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/squid-oil.png",
+      icon_size = 64,
       ingredients = {
         {type = "item", name = "raw-squid", amount = 1}
       },
@@ -131,11 +131,11 @@ data:extend({
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__Advanced_Fishing__/graphics/fishes/crab.png",
-      icon_size = 128,
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/crab-plastic.png",
+      icon_size = 64,
       ingredients = {
         {type = "item", name = "raw-crab", amount = 2},
-        {type = "fluid", name = "lubricant", amount = 100}
+        {type = "fluid", name = settings.startup["xtreme-fishing-crab_catalyst"].value, amount = 100}
       },
       results = {
         { type = "item", name = "plastic-bar", amount = settings.startup["xtreme-fishing-crab_plastic"].value}
@@ -170,16 +170,17 @@ data:extend({
     }
 })
 
+-- amount of lubricant produced per fish from settings
+data.raw.recipe["fish-lubification"].icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/fish-lube.png"
+data.raw.recipe["fish-lubification"].icon_size = 64
+data.raw.recipe["fish-lubification"].results = {
+  { type = "fluid", name = "lubricant", amount = settings.startup["xtreme-fishing-fishlube"].value }
+}
+
 table.insert(data.raw["technology"]["lubricant"].effects, {type = "unlock-recipe", recipe = "lubrification-salmon"})
 table.insert(data.raw["technology"]["lubricant"].effects, {type = "unlock-recipe", recipe = "lubrification-tropical"})
 table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-recipe", recipe = "lubrification-squid"})
 table.insert(data.raw["technology"]["plastics"].effects, {type = "unlock-recipe", recipe = "lubrification-crab"})
-
--- amount of lubricant produced per fish from settings
-local recipe = table.deepcopy(data.raw["recipe"]["fish-lubification"])
-recipe.results = {{ type = "fluid", name = "lubricant", amount = settings.startup["xtreme-fishing-fishlube"].value }}
-data:extend({recipe})
- 
 
 -- had to separate these due to game crash without more-fish mod
 if mods["more-fish"] then
@@ -190,8 +191,8 @@ if mods["more-fish"] then
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__more-fish__/graphics/icons/Raw_Cod_JE4_BE2.png",
-      icon_size = 160,
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/cod-lube.png",
+      icon_size = 64,
       ingredients = {
         {type = "item", name = "raw-cod", amount = 1}
       },
@@ -232,7 +233,7 @@ if mods["more-fish"] then
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__more-fish__/graphics/icons/Tropical_Fish_JE2_BE2.png",
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/clown-lube.png",
       icon_size = 160,
       ingredients = {
         { type = "item", name = "raw-clownfish", amount = 1 }
@@ -274,7 +275,7 @@ if mods["more-fish"] then
       category = "chemistry",
       enabled = false,
       energy_required = 5,
-      icon = "__more-fish__/graphics/icons/Pufferfish_(item)_JE5_BE2.png",
+      icon = "__xtreme-fishing__/graphics/icons/" .. "recipe/puffer-gas.png",
       icon_size = 160,
       ingredients = {
         { type = "item", name = "raw-pufferfish", amount = 1 }

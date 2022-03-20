@@ -4,6 +4,7 @@ data:extend({
     name = "xtreme-fishing-enablepipes",
     setting_type = "startup",
     default_value = true,
+    order = "a[pipes]",
   },
   {
     type = "int-setting",
@@ -12,6 +13,7 @@ data:extend({
     default_value = 11,
     minimum_value = 1,
     maximum_value = 101,
+    order = "a[pipes-start]",
   },
   {
     type = "int-setting",
@@ -20,6 +22,7 @@ data:extend({
     default_value = 2,
     minimum_value = 0,
     maximum_value = 16,
+    order = "a[pipes-interval]",
   },
   {
     type = "int-setting",
@@ -28,6 +31,7 @@ data:extend({
     default_value = 250,
     minimum_value = 50,
     maximum_value = 500,
+    order = "ab[farm-water]",
   },
   {
     type = "int-setting",
@@ -36,6 +40,7 @@ data:extend({
     default_value = 40,
     minimum_value = 1,
     maximum_value = 100,
+    order = "ab[farm-yield]",
   },
   {
     type = "string-setting",
@@ -44,6 +49,7 @@ data:extend({
     default_value = "coal",
     allow_blank = false,
     auto_trim = true
+    order = "ac[puffer-type]",
   },
   {
     type = "int-setting",
@@ -52,6 +58,7 @@ data:extend({
     default_value = 6,
     minimum_value = 1,
     maximum_value = 100,
+    order = "ac[puffer-yield]",
   },
   {
     type = "int-setting",
@@ -60,6 +67,7 @@ data:extend({
     default_value = 10,
     minimum_value = 5,
     maximum_value = 100,
+    order = "ad[fishlube-squid]",
   },
   {
     type = "int-setting",
@@ -68,6 +76,7 @@ data:extend({
     default_value = 10,
     minimum_value = 5,
     maximum_value = 100,
+    order = "ad[fishlube-puffer]",
   },
   {
     type = "int-setting",
@@ -76,6 +85,7 @@ data:extend({
     default_value = 2,
     minimum_value = 1,
     maximum_value = 10,
+    order = "ad[fishlube-crabplastic]",
   },
   {
     type = "int-setting",
@@ -84,5 +94,14 @@ data:extend({
     default_value = 10,
     minimum_value = 5,
     maximum_value = 100,
+    order = "ad[fishlube]",
+  },
+  {
+    type = "string-setting",
+    name = "xtreme-fishing-crab_catalyst",
+    setting_type = "startup",
+    default_value = "lubricant",
+    allowed_values = { "lubricant", "petroleum-gas", "steam", "sulfuric-acid" },
+    order = "ad[fishlube-crabcatalyst]",
   },
 })
