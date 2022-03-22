@@ -48,7 +48,7 @@ data:extend({
     setting_type = "startup",
     default_value = "coal",
     allow_blank = false,
-    auto_trim = true
+    auto_trim = true,
     order = "ac[puffer-type]",
   },
   {

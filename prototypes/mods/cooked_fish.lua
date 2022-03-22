@@ -1,65 +1,28 @@
-data:extend({
-  {
+local create_cooked_fish_recipe = function(fish, result, amount)
+  local recipe = {
     type = "recipe",
-    name = "cooked-crab",
-    category = "smelting",
-    energy_required = 16,
-    enabled = true,
-    ingredients = {
-      { "raw-crab", 1 }
-    },
-    result = "cooked-fish"
-  },
-  {
-    type = "recipe",
-    name = "cooked-tropical",
-    category = "smelting",
-    energy_required = 16,
-    enabled = true,
-    ingredients = {
-      { "raw-tropical", 1 }
-    },
-    result = "cooked-fish"
-  },
-  {
-    type = "recipe",
-    name = "cooked-squid",
+    name = "cooked-" .. fish .. "-recipe",
     category = "smelting",
     energy_required = 8,
     enabled = true,
-    ingredients = {
-      { "raw-squid", 1 }
-    },
-    result = "cooked-fish"
+    ingredients = {{ "raw-" .. fish, 1 }},
+    result = result,
+    result_count = amount,
+    localised_name = result.localised_name
   }
-})
--- salmon is already part of cooked-fish mod
+  return recipe
+end
 
-if mods["more-fish"] then
-  data:extend({
-    {
-      type = "recipe",
-      name = "cooked-pufferfish",
-      category = "smelting",
-      energy_required = 4,
-      enabled = true,
-      ingredients = {
-        { "raw-pufferfish", 1 }
-      },
-      result = settings.startup["xtreme-fishing-puffer_type"].value,
-      result_count = settings.startup["xtreme-fishing-puffer_yield"].value
-    },
-    {
-      type = "recipe",
-      name = "cooked-clownfish",
-      category = "smelting",
-      energy_required = 16,
-      enabled = true,
-      ingredients = {
-        { "raw-clownfish", 1 }
-      },
-      result = "cooked-fish"
-    }
-  })
+-- simplified code
+for f,v in pairs(data.raw.fish) do
+  if (f == "pufferfish") then
+    data:extend({ 
+      create_cooked_fish_recipe(f, settings.startup["xtreme-fishing-puffer_type"].value, settings.startup["xtreme-fishing-puffer_yield"].value)
+    })
+  else
+    data:extend({
+      create_cooked_fish_recipe(f, "cooked-fish", 1)
+    })
+  end
 end
 
