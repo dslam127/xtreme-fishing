@@ -1,20 +1,29 @@
 -- remove old fish items
-function remove_item(name)
-  data.raw["item"][name] = nil
-  data.raw["recipe"][name] = nil
-  data.raw["capsule"][name] = nil
+function hide_item(name)
+  if data.raw["item"][name] ~= nil then
+    data.raw["item"][name].flags = { "hidden" }
+  end
+  if data.raw["capsule"][name] ~= nil then
+    data.raw["capsule"][name].flags = { "hidden" }
+  end
+  if data.raw["recipe"][name] ~= nil then
+    data.raw["recipe"][name].enabled = false
+    data.raw["recipe"][name].hidden = true
+    data.raw["recipe"][name].hide_from_player_crafting = true
+    data.raw["recipe"][name].hide_from_stats = true
+  end
 end
 
-remove_item('af-crab')
-remove_item('af-tropical')
-remove_item('af-squid')
-remove_item('af-salmon')
+hide_item('af-crab')
+hide_item('af-tropical')
+hide_item('af-squid')
+hide_item('af-salmon')
 
 local fish_icons = {
   cod = "codfish.png",
   pufferfish = "pufferfish.png",
   clownfish = "clownfish.png", 
-  salmon = "salmon.png",
+  salmon = "af-salmon.png",
 }
 
 -- update fish icons
