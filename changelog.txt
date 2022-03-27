@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2022-3-27
+  Changes:
+    - Added concrete pipes that take no fire damage
+    - Added custom wood icon
+  Bugfixes:
+    - Fixed issue where Krastorio2 was removing pipes
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2022-3-25
   Changes:

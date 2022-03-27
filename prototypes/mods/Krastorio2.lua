@@ -19,4 +19,4 @@ for fish,t in pairs(data.raw.fish) do
   
   data:extend({recipe})
   table.insert(data.raw.technology["kr-bio-processing"].effects, { type = "unlock-recipe", recipe = "kr-grow-wood-" .. fish })
-end 
+end

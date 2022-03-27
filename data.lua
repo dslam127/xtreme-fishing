@@ -35,4 +35,3 @@ end
 if mods["SeaTorio"] then
   require("prototypes.mods.SeaTorio")
 end
-
