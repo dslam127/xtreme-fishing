@@ -35,3 +35,7 @@ end
 if mods["SeaTorio"] then
   require("prototypes.mods.SeaTorio")
 end
+
+if mods["space-exploration"] then
+  require("prototypes.mods.space_exploration")
+end

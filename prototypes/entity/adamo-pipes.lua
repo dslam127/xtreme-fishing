@@ -712,7 +712,7 @@ data:extend(
 		max_health = 200,
 		corpse = "small-remnants",
 		resistances = {
-			{ type = "fire", percent = 100 }
+      { type = "fire", percent = 80 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
@@ -758,7 +758,7 @@ data:extend(
 		max_health = 300,
 		corpse = "small-remnants",
 		resistances = {
-			{	type = "fire", percent = 100 }
+			{ type = "fire", percent = 80 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
@@ -795,7 +795,7 @@ data:extend(
 		max_health = 200,
 		corpse = "small-remnants",
 		resistances = {
-			{ type = "fire", percent = 90 }
+			{ type = "fire", percent = 70 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
@@ -841,7 +841,7 @@ data:extend(
 		max_health = 300,
 		corpse = "small-remnants",
 		resistances = {
-			{	type = "fire", percent = 80 }
+			{ type = "fire", percent = 70 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
@@ -878,7 +878,7 @@ data:extend(
 		max_health = 50,
 		corpse = "small-remnants",
 		resistances = {
-			{ type = "fire", percent = 90 }
+			{ type = "fire", percent = 40 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
@@ -923,7 +923,7 @@ data:extend(
 		max_health = 75,
 		corpse = "small-remnants",
 		resistances = {
-			{ type = "fire", percent = 80 }
+			{ type = "fire", percent = 40 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
@@ -959,7 +959,7 @@ data:extend(
 		max_health = 100,
 		corpse = "small-remnants",
 		resistances = {
-			{ type = "fire", percent = 90 }
+			{ type = "fire", percent = 50 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
@@ -1004,7 +1004,7 @@ data:extend(
 		max_health = 150,
 		corpse = "small-remnants",
 		resistances = {
-			{ type = "fire", percent = 80 }
+			{ type = "fire", percent = 50 }
 		},
 		fast_replaceable_group = "pipe",
 		collision_box = {{-0.29, -0.29}, {0.29, 0.2}},

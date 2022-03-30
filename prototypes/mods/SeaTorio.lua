@@ -1,48 +1,61 @@
--- dynamically create recipes for other fish types
-for fish,value in pairs(data.raw.fish) do
-  local recipe_from_water = table.deepcopy(data.raw.recipe["fish-from-water"])
-  if recipe_from_water ~= nil and fish ~= "fish" then
-    recipe_from_water.name = fish .. "-from-water"
-    recipe_from_water.icon = data.raw.fish[fish].icon
-    recipe_from_water.icon_size = data.raw.fish[fish].icon_size
-    recipe_from_water.icon_mipmaps = data.raw.fish[fish].icon_mipmaps
-    recipe_from_water.results = {
+-- various fish recipes from SeaTorio mod
+local add_from_water = function(fish)
+  local recipe = table.deepcopy(data.raw.recipe["fish-from-water"])
+  if recipe ~= nil then
+    recipe.name = fish .. "-from-water"
+    recipe.icon = data.raw.fish[fish].icon
+    recipe.icon_size = data.raw.fish[fish].icon_size
+    recipe.icon_mipmaps = data.raw.fish[fish].icon_mipmaps
+    recipe.results = {
       { type = "item", name = "raw-" .. fish, amount_min = 3, amount_max = 7 },
       { type = "fluid", name = "water", amount = 400, catalyst_amount = 400 }
     }
-    recipe_from_water.order = "b[" .. fish .. "-from-water]"
-    recipe_from_water.localised_name = fish .. " from water"
-    
-    data:extend({recipe_from_water})
+    recipe.order = "b[" .. fish .. "-from-water]"
+    recipe.localised_name = fish .. " from water"    
   end
-  
-  local recipe_heavy_oil_production = table.deepcopy(data.raw.recipe["heavy-oil-production"])
-  if recipe_heavy_oil_production ~= nil and fish ~= "fish" then
-    recipe_heavy_oil_production.name = "heavy-oil-production-" .. fish
+  return recipe
+end
+
+local add_heavy_oil_production = function(fish)
+  local recipe = table.deepcopy(data.raw.recipe["heavy-oil-production"])
+  if recipe ~= nil then
+    recipe.name = "heavy-oil-production-" .. fish
     local element = 1
-    for _,v in pairs(recipe_heavy_oil_production.ingredients) do
+    for _,v in pairs(recipe.ingredients) do
       if v.name then element = 'name' end
       if v[element] == "raw-fish" then v[element] = "raw-" .. fish end
     end
-    recipe_heavy_oil_production.order = "a[heavy-oil-production-" .. fish .. "]"
-    recipe_heavy_oil_production.localised_name = "Heavy Oil Production (" .. fish .. ")"
+    recipe.order = "a[heavy-oil-production-" .. fish .. "]"
+    recipe.localised_name = "Heavy Oil Production (" .. fish .. ")"
+  end
+  return recipe
+end
+
+local add_dissolver = function(fish)
+  local recipe = table.deepcopy(data.raw.recipe["dissolver"])
+  if recipe ~= nil then
+    recipe.name = "dissolver-" .. fish
+    local element = 1
+    for _,v in pairs(recipe.ingredients) do
+      if v.name then element = 'name' end
+      if v[element] == "raw-fish" then v[element] = "raw-" .. fish end
+    end
+    recipe.order = "c[dissolver-" .. fish .. "]"
+    recipe.localised_name = "Dissolver (" .. fish .. ")"
+  end
+  return recipe
+end
+
+-- add recipes for each fish (excluding "fish")
+for fish,value in pairs(data.raw.fish) do
+  if fish ~= "fish" then
+    data:extend({
+      add_from_water(fish),
+      add_heavy_oil_production(fish),
+      add_dissolver(fish)
+    })
     
-    data:extend({recipe_heavy_oil_production})
     table.insert(data.raw.technology["kr-steam-engine"].effects, { type = "unlock-recipe", recipe = "heavy-oil-production-" .. fish })
-  end
-  
-  local recipe_dissolver = table.deepcopy(data.raw.recipe["dissolver"])
-  if recipe_dissolver ~= nil and fish ~= "fish" then
-    recipe_dissolver.name = "dissolver-" .. fish
-    local element = 1
-    for _,v in pairs(recipe_dissolver.ingredients) do
-      if v.name then element = 'name' end
-      if v[element] == "raw-fish" then v[element] = "raw-" .. fish end
-    end
-    recipe_dissolver.order = "c[dissolver-" .. fish .. "]"
-    recipe_dissolver.localised_name = "Dissolver (" .. fish .. ")"
-    
-    data:extend({recipe_dissolver})
     table.insert(data.raw.technology["kr-basic-fluid-handling"].effects, { type = "unlock-recipe", recipe = "dissolver-" .. fish })
   end
 end
