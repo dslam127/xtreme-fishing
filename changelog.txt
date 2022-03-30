@@ -1,25 +1,33 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 2022-3-30
+  Info:
+    - Added support for Space Exploration
   Changes:
-    - Added support for space exploration
     - Added first aid kit recipes for Krastorio2
     - Added biomethanol recipes for Krastorio2
+    - Changed farm recipe yield based on a new calculation
+  Optimizations:
+    - Code tidying and cleanup
+    - Revised changelog
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 2022-3-27
   Changes:
     - Added concrete pipes
     - Added wood++ recipe for using fish as fertilizer
-    - Added modified base game icon wood++ 
+  Graphics:
+    - Added concrete pipe textures
+    - Added wood++ icon (modified base game wood icon)
   Bugfixes:
     - Forced pipes into tech during final data stage (somehow Krastorio2 was removing them)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2022-3-25
-  Changes:
+  Info:
     - Added support for SeaTorio
     - Added partial support for Krastorio2
+  Changes:
     - Removed chem science requirement for fish farm tech
     - Changed setting from "Toggle Pipes" to "Enable Pipes"
     - Added new migration script
@@ -28,26 +36,34 @@ Version: 0.1.9
 Date: 2022-3-22
   Changes:
     - Added setting for crab processing fluid type
+  Graphics:
     - Added new icons for fish lube recipes
-    - Cleaned up code to allow for additional mods/fish
+  Optimizations:
+    - Code tidying and cleanup
+    - Standardized functions to allow adding more modded fish
     - Organized settings
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.8
 Date: 2022-3-19
+  Info:
+    - Added new dependency Factorio Library by raiguard
+    - Added support for ModMash Splinter, Gone Fishing
   Changes:
-    - Added dependency flib
-    - Added auto calculation of ingredients for production cycle
     - Added setting to adjust yield from production cycle
-    - Added fishy mipmaps for better compatibilty
-    - Added support for modmashsplinterfishing
+  Graphics:
+    - Added mipmaps for better compatibilty
+  Optimizations:
+    - Added auto calculation of ingredients for production cycle
     - Updated locale/en
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2022-03-19
+  Info:
+    - All fish types now spawn in the water on new map creation
   Changes:
     - Added setting to toggle pipes
+  Optimizations:
     - Renamed pipe names to be more vanilla
-    - All fish types now spawn in the water on map creation
   Bugfixes:
     - Fixed typo in data.lua
     - Fixed Fish_Lube production amount not matching setting
@@ -57,16 +73,16 @@ Date: 2022-03-15
   Changes:
     - Added settings to adjust what pufferfish smelts to and how much
     - Removed setting for coal quantity
-    - Updated locale/en
   Bugfixes:
     - Set water ingredient max from 1000 to 500
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2022-03-15
-  Changes:
+  Info:
     - Added ability to cook all fish types using the cooked-fish mod 
     - Added ability to produce "more-fish" in the fish farm
     - Added support for Fish_Lube mod to allow multiple types of fish
+  Changes:  
     - Added recipe extract light oil from squid
     - Added recipe extract petroleum-gas from pufferfish
     - Added recipe smelting pufferfish results in coal (amount can be changed in settings)

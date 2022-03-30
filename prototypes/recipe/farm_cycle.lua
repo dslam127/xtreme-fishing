@@ -7,9 +7,9 @@ recipe.ingredients = {
   { type="fluid", name = "water", amount = value }
 }
 recipe.results = {
-  { type = "item", name = "raw-fish", amount = yield, probability = 0.30 },	
-  { type = "item", name = "raw-salmon", amount = yield, probability = 0.20 },
-  { type = "item", name = "raw-tropical", amount = yield, probability = 0.25 },
-  { type = "item", name = "raw-crab", amount = yield, probability = 0.15 },
-  { type = "item", name = "raw-squid", amount = yield, probability = 0.10 }
+  { type = "item", name = "raw-fish", amount_min = 0, amount_max = yield, probability = 0.30 },	
+  { type = "item", name = "raw-salmon", amount_min = 0, amount_max = yield, probability = 0.20 },
+  { type = "item", name = "raw-tropical", amount_min = 0, amount_max = yield, probability = 0.25 },
+  { type = "item", name = "raw-crab", amount_min = 0, amount_max = yield, probability = 0.15 },
+  { type = "item", name = "raw-squid", amount_min = 0, amount_max = yield, probability = 0.10 }
 }
