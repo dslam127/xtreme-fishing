@@ -167,6 +167,101 @@ data:extend({
         }
       }
     }
+  },
+  --------------- jellyfish ---------------
+  {
+    type = "capsule",
+    name = "raw-jellyfish",
+    icon = "__xtreme-fishing__/graphics/icons/" .. "fish/jellyfish.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    subgroup = "raw-resource",
+    capsule_action =
+    {
+      type = "use-on-self",
+      attack_parameters =
+      {
+        type = "projectile",
+        activation_type = "consume",
+        ammo_category = "capsule",
+        cooldown = 30,
+        range = 0,
+        ammo_type =
+        {
+          category = "capsule",
+          target_type = "position",
+          action =
+          {
+            type = "direct",
+            action_delivery =
+            {
+              type = "instant",
+              target_effects =
+              {
+                {
+                  type = "damage",
+                  damage = {type = "physical", amount = 80}
+                },
+                {
+                  type = "play-sound",
+                  sound = sounds.eat_fish
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    order = "h[raw-fish][jellyfish]",
+    stack_size = 100
+  },
+  {
+    type = "fish",
+    name = "jellyfish",
+    icon = "__xtreme-fishing__/graphics/icons/" .. "fish/jellyfish.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    flags = {"placeable-neutral", "not-on-map"},
+    minable = {mining_time = 0.4, result = "raw-jellyfish", count = 5},
+    mined_sound = sounds.mine_fish,
+    max_health = 20,
+    subgroup = "creatures",
+    order = "b-a-jellyfish",
+    collision_box = {{-0.75, -0.75}, {0.75, 0.75}},
+    selection_box = {{-0.5, -0.3}, {0.5, 0.3}},
+    pictures =
+    {
+      {
+        filename = "__base__/graphics/entity/fish/fish-1.png",
+        priority = "extra-high",
+        width = 22,
+        height = 36
+      },
+      {
+        filename = "__base__/graphics/entity/fish/fish-2.png",
+        priority = "extra-high",
+        width = 32,
+        height = 32
+      }
+    },
+    autoplace =
+    {
+      order = "x-squid",
+      tile_restriction = { 
+        "deepwater",
+        "deepwater-green"
+      },
+      peaks =
+      {
+        {
+          influence = 0.01,
+          min_influence = 0,
+          water_optimal = 0.624,
+          water_range = 0.124,
+          water_max_range = 0.124,
+        }
+      }
+    }
   }
 })
 

@@ -12,3 +12,7 @@ if mods["Krastorio2"] then
   data.raw["int-setting"]["xtreme-fishing-ugpipestart"].default_value = 19
   data.raw["int-setting"]["xtreme-fishing-ugpipeinterval"].default_value = 4
 end
+
+-- hide AF settings
+data.raw["bool-setting"]["bigger-nuclear-cell-stacks"].hidden = true
+data.raw["bool-setting"]["bigger-cargo"].hidden = true

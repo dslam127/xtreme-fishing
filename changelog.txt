@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 2022-4-1
+  Info:
+    - Added new fish jellyfish
+  Graphics:
+    - Added jellyfish icon mipmaps
+  Optimizations:
+    - Concealed settings relating to inactive mods
+    - Concealed settings from Advanced Fishing mod (no function)
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 2022-3-30
   Info:

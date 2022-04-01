@@ -11,5 +11,6 @@ recipe.results = {
   { type = "item", name = "raw-salmon", amount_min = 0, amount_max = yield, probability = 0.20 },
   { type = "item", name = "raw-tropical", amount_min = 0, amount_max = yield, probability = 0.25 },
   { type = "item", name = "raw-crab", amount_min = 0, amount_max = yield, probability = 0.15 },
-  { type = "item", name = "raw-squid", amount_min = 0, amount_max = yield, probability = 0.10 }
+  { type = "item", name = "raw-squid", amount_min = 0, amount_max = yield, probability = 0.10 },
+  { type = "item", name = "raw-jellyfish", amount_min = 0, amount_max = yield, probability = 0.15 }
 }
