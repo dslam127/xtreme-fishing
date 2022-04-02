@@ -1,6 +1,24 @@
---[[ use fish as fertilizer in the wood/fertilizer recipe
-  - uses 10x more fish than fertilizer but results in 50% more wood
---]]
+local add_fertilizer_from = function(fish)
+  local recipe = table.deepcopy(data.raw.recipe["fertilizer"])
+  if recipe ~= nil then
+    recipe.name = "fertilizer-from-" .. fish
+    local element = 1
+    for _,v in pairs(recipe.ingredients) do
+      if v.name then element = 'name' end
+      if v[element] == "biomass" then 
+        v[element] = "raw-" .. fish
+        v["amount"] = 5
+      end
+    end
+    recipe.results = nil
+    recipe.result = "fertilizer"
+    recipe.result_count = 5
+    recipe.localised_name = "Fertilizer from " .. fish
+  end
+  return recipe
+end
+
+--[[ deprecated: now that fish can be converted to fertilizer
 local add_wood_from = function(fish)
   local recipe = table.deepcopy(data.raw.recipe["kr-grow-wood-plus"])
   if recipe ~= nil then
@@ -20,6 +38,7 @@ local add_wood_from = function(fish)
   end
   return recipe
 end
+--]]
 
 local add_first_aid = function(fish)
   local recipe = table.deepcopy(data.raw.recipe["first-aid-kit"])
@@ -65,17 +84,20 @@ end
 for fish,t in pairs(data.raw.fish) do
   if fish ~= "fish" then
     data:extend({
-      add_wood_from(fish),
+      add_fertilizer_from(fish),
+--      add_wood_from(fish),
       add_first_aid(fish),
       add_biomthanol_from(fish)
     })
   else
     data:extend({
-      add_wood_from(fish),
+      add_fertilizer_from(fish),
+--      add_wood_from(fish),
       add_biomthanol_from(fish)
     })    
   end
   
-  table.insert(data.raw.technology["kr-bio-processing"].effects, { type = "unlock-recipe", recipe = "kr-grow-wood-" .. fish })
+  table.insert(data.raw.technology["kr-bio-processing"].effects, { type = "unlock-recipe", recipe = "fertilizer-from-" .. fish})
+--  table.insert(data.raw.technology["kr-bio-processing"].effects, { type = "unlock-recipe", recipe = "kr-grow-wood-" .. fish })
   table.insert(data.raw.technology["kr-advanced-chemistry"].effects, { type = "unlock-recipe", recipe = "biomethanol-" .. fish })
 end

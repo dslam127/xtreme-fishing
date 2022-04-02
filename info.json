@@ -1,7 +1,7 @@
 
 {
 	"name": "xtreme-fishing",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"title": "Xtreme Fishing",
 	"description": "This mod combines several existing fish mods and makes them co-exist flawlessly.\n\nEven though this may support many mods, they should not all be used at the same time.",
 	"author": "xXtremeSlayerXx",
@@ -17,7 +17,8 @@
     "? modmashsplinterfishing",
     "? Krastorio2",
     "? SeaTorio",
-    "? space-exploration"
+    "? space-exploration",
+    "? GreenTec"
   ],
 	"factorio_version": "1.1"
 }

@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 2022-4-2
+  Info:
+    - Added support for GreenTec
+  Changes:
+    - Added fish to biomass recipes (GreenTec)
+    - Added fish to fertilizer recipes (Krastorio2)
+    - Removed recipes that used fish instead of fertilizer to make wood (Krastorio2)
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2022-4-1
   Info:

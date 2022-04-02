@@ -39,3 +39,7 @@ end
 if mods["space-exploration"] then
   require("prototypes.mods.space_exploration")
 end
+
+if mods["GreenTec"] then
+  require("prototypes.mods.GreenTec")
+end
