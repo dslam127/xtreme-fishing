@@ -55,6 +55,7 @@ for fish,value in pairs(data.raw.fish) do
       add_dissolver(fish)
     })
     
+    table.insert(data.raw.technology["basic-tech-card-crafted"].effects, { type = "unlock-recipe", recipe = fish .. "-from-water" })
     table.insert(data.raw.technology["kr-steam-engine"].effects, { type = "unlock-recipe", recipe = "heavy-oil-production-" .. fish })
     table.insert(data.raw.technology["kr-basic-fluid-handling"].effects, { type = "unlock-recipe", recipe = "dissolver-" .. fish })
   end
