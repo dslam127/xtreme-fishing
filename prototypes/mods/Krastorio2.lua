@@ -99,5 +99,9 @@ for fish,t in pairs(data.raw.fish) do
   
   table.insert(data.raw.technology["kr-bio-processing"].effects, { type = "unlock-recipe", recipe = "fertilizer-from-" .. fish})
 --  table.insert(data.raw.technology["kr-bio-processing"].effects, { type = "unlock-recipe", recipe = "kr-grow-wood-" .. fish })
-  table.insert(data.raw.technology["kr-advanced-chemistry"].effects, { type = "unlock-recipe", recipe = "biomethanol-" .. fish })
+  table.insert(data.raw.technology["kr-gas-power-station"].effects, { type = "unlock-recipe", recipe = "biomethanol-" .. fish }) -- changed from kr-advanced-chemistry
 end
+
+-- pipe stack size based on settings
+data.raw.item["kr-steel-pipe"].stack_size = settings.startup["xtreme-fishing-pipestacksize"].value
+data.raw.item["kr-steel-pipe-to-ground"].stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value

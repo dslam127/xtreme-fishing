@@ -11,7 +11,9 @@ data:extend({
 data.raw["pipe-to-ground"]["pipe-to-ground"]
 .fast_replaceable_group = "pipe"
 
+data.raw.item["pipe"].stack_size = settings.startup["xtreme-fishing-pipestacksize"].value
 data.raw.item["pipe"].subgroup = "pipe"
+data.raw.item["pipe-to-ground"].stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value
 data.raw.item["pipe-to-ground"].subgroup = "pipe"
 
 data.raw.item["pipe"].order = "a[pipe]-a[pipe]-1-2"
@@ -538,26 +540,6 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].pictures = adamo.pipetogroundpictur
 
 data:extend(
 {
-  {
-		type = "recipe",
-		name = "concrete-pipe",
-		enabled = "false",
-		ingredients = {
-			{"concrete", 1},
-		},
-		result = "concrete-pipe",
-	},
-	{
-		type = "recipe",
-		name = "concrete-pipe-to-ground",
-		enabled = "false",
-		ingredients = {
-			{"concrete-pipe", 10},
-			{"concrete", 5},
-		},
-		result_count = 2,
-		result = "concrete-pipe-to-ground",
-	},
 	{
 		type = "recipe",
 		name = "stone-pipe",
@@ -619,24 +601,24 @@ data:extend(
 		result = "plastic-pipe-to-ground",
 	},
   {
-		type = "item",
+		type = "recipe",
 		name = "concrete-pipe",
-		icon = "__xtreme-fishing__/graphics/icons/pipe/concrete-pipe.png",
-		icon_size = 32,
-		subgroup = "pipe",
-		order = "a[pipe]-a[pipe]-1-4",
-		place_result = "concrete-pipe",
-		stack_size = 50,
+		enabled = "false",
+		ingredients = {
+			{"concrete", 1},
+		},
+		result = "concrete-pipe",
 	},
 	{
-		type = "item",
+		type = "recipe",
 		name = "concrete-pipe-to-ground",
-		icon = "__xtreme-fishing__/graphics/icons/pipe/concrete-pipe-to-ground.png",
-		icon_size = 32,
-		subgroup = "pipe",
-		order = "a[pipe]-b[pipe-to-ground]-1-4",
-		place_result = "concrete-pipe-to-ground",
-		stack_size = 50,
+		enabled = "false",
+		ingredients = {
+			{"concrete-pipe", 10},
+			{"concrete", 5},
+		},
+		result_count = 2,
+		result = "concrete-pipe-to-ground",
 	},
 	{
 		type = "item",
@@ -646,7 +628,7 @@ data:extend(
 		subgroup = "pipe",
 		order = "a[pipe]-a[pipe]-1-3",
 		place_result = "stone-pipe",
-		stack_size = 50,
+		stack_size = settings.startup["xtreme-fishing-pipestacksize"].value,
 	},
 	{
 		type = "item",
@@ -656,7 +638,7 @@ data:extend(
 		subgroup = "pipe",
 		order = "a[pipe]-b[pipe-to-ground]-1-3",
 		place_result = "stone-pipe-to-ground",
-		stack_size = 50,
+		stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value,
 	},
 	{
 		type = "item",
@@ -666,7 +648,7 @@ data:extend(
 		subgroup = "pipe",
 		order = "a[pipe]-a[pipe]-1-1",
 		place_result = "copper-pipe",
-		stack_size = 50,
+		stack_size = settings.startup["xtreme-fishing-pipestacksize"].value,
 	},
 	{
 		type = "item",
@@ -676,7 +658,7 @@ data:extend(
 		subgroup = "pipe",
 		order = "a[pipe]-b[pipe-to-ground]-1-1",
 		place_result = "copper-pipe-to-ground",
-		stack_size = 50,
+		stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value,
 	},
 	{
 		type = "item",
@@ -686,7 +668,7 @@ data:extend(
 		subgroup = "pipe",
 		order = "a[pipe]-a[pipe]-2-3",
 		place_result = "plastic-pipe",
-		stack_size = 50,
+		stack_size = settings.startup["xtreme-fishing-pipestacksize"].value,
 	},
 	{
 		type = "item",
@@ -696,90 +678,27 @@ data:extend(
 		subgroup = "pipe",
 		order = "a[pipe]-b[pipe-to-ground]-2-3",
 		place_result = "plastic-pipe-to-ground",
-		stack_size = 50,
+		stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value,
 	},
   {
-		type = "pipe",
+		type = "item",
 		name = "concrete-pipe",
 		icon = "__xtreme-fishing__/graphics/icons/pipe/concrete-pipe.png",
 		icon_size = 32,
-		flags = {"placeable-neutral", "player-creation"},
-		minable = {
-			hardness = 0.3,
-			mining_time = 0.3,
-			result = "concrete-pipe"
-		},
-		max_health = 200,
-		corpse = "small-remnants",
-		resistances = {
-      { type = "fire", percent = 80 }
-		},
-		fast_replaceable_group = "pipe",
-		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
-		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-		fluid_box = {
-			base_area = 1,
-			height = 2,
-			pipe_connections = {
-				{ position = {0, -1} },
-				{ position = {1, 0} },
-				{ position = {0, 1} },
-				{ position = {-1, 0} }
-			},
-		},
-		pictures = adamo.pipepictures("concrete"),
-		working_sound = {
-			sound = {
-				{ filename = "__base__/sound/pipe.ogg", volume = 0.65 }
-			},
-			match_volume_to_activity = true,
-			max_sounds_per_type = 3
-		},
-		horizontal_window_bounding_box = {
-			{-0.25, -0.25},
-			{0.25, 0.15625}
-		},
-		vertical_window_bounding_box = {
-			{-0.28125, -0.40625},
-			{0.03125, 0.125}
-		},
+		subgroup = "pipe",
+		order = "a[pipe]-a[pipe]-1-4",
+		place_result = "concrete-pipe",
+		stack_size = settings.startup["xtreme-fishing-pipestacksize"].value,
 	},
 	{
-		type = "pipe-to-ground",
+		type = "item",
 		name = "concrete-pipe-to-ground",
 		icon = "__xtreme-fishing__/graphics/icons/pipe/concrete-pipe-to-ground.png",
 		icon_size = 32,
-		flags = {"placeable-neutral", "player-creation"},
-		minable = {
-			hardness = 0.3,
-			mining_time = 0.3,
-			result = "concrete-pipe-to-ground"
-		},
-		max_health = 300,
-		corpse = "small-remnants",
-		resistances = {
-			{ type = "fire", percent = 80 }
-		},
-		fast_replaceable_group = "pipe",
-		collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
-		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-		fluid_box = {
-			base_area = 1,
-			height = 2,
-			pipe_covers = adamo.pipecoverspictures("concrete"),
-			pipe_connections = {
-				{ position = {0, -1} },
-				{ position = {0, 1}, max_underground_distance = 10 }
-			},
-		},
-		underground_sprite = {
-			filename = "__core__/graphics/arrows/underground-lines.png",
-			priority = "extra-high-no-scale",
-			width = 64,
-			height = 64,
-			scale = 0.5
-		},
-		pictures = adamo.pipetogroundpictures("concrete"),
+		subgroup = "pipe",
+		order = "a[pipe]-b[pipe-to-ground]-1-4",
+		place_result = "concrete-pipe-to-ground",
+		stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value,
 	},
 	{
 		type = "pipe",
@@ -792,7 +711,7 @@ data:extend(
 			mining_time = 0.3,
 			result = "stone-pipe"
 		},
-		max_health = 200,
+		max_health = 50,
 		corpse = "small-remnants",
 		resistances = {
 			{ type = "fire", percent = 70 }
@@ -802,7 +721,7 @@ data:extend(
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box = {
 			base_area = 1,
-			height = 2,
+			height = 0.5,
 			pipe_connections = {
 				{ position = {0, -1} },
 				{ position = {1, 0} },
@@ -838,7 +757,7 @@ data:extend(
 			mining_time = 0.3,
 			result = "stone-pipe-to-ground"
 		},
-		max_health = 300,
+		max_health = 75,
 		corpse = "small-remnants",
 		resistances = {
 			{ type = "fire", percent = 70 }
@@ -848,7 +767,7 @@ data:extend(
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box = {
 			base_area = 1,
-			height = 2,
+			height = 0.5,
 			pipe_covers = adamo.pipecoverspictures("stone"),
 			pipe_connections = {
 				{ position = {0, -1} },
@@ -875,7 +794,7 @@ data:extend(
 			mining_time = 0.3,
 			result = "copper-pipe"
 		},
-		max_health = 50,
+		max_health = 100,
 		corpse = "small-remnants",
 		resistances = {
 			{ type = "fire", percent = 40 }
@@ -885,6 +804,7 @@ data:extend(
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box = {
 			base_area = 1,
+      height = 0.75,
 			pipe_connections = {
 				{ position = {0, -1} },
 				{ position = {1, 0} },
@@ -920,7 +840,7 @@ data:extend(
 			mining_time = 0.3,
 			result = "copper-pipe-to-ground"
 		},
-		max_health = 75,
+		max_health = 150,
 		corpse = "small-remnants",
 		resistances = {
 			{ type = "fire", percent = 40 }
@@ -930,6 +850,7 @@ data:extend(
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box = {
 			base_area = 1,
+      height = 0.75,
 			pipe_covers = adamo.pipecoverspictures("copper"),
 			pipe_connections = {
 				{ position = {0, -1} },
@@ -956,7 +877,7 @@ data:extend(
 			mining_time = 0.1,
 			result = "plastic-pipe"
 		},
-		max_health = 100,
+		max_health = 120,
 		corpse = "small-remnants",
 		resistances = {
 			{ type = "fire", percent = 50 }
@@ -966,6 +887,7 @@ data:extend(
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box = {
 			base_area = 1,
+      height = 2,
 			pipe_connections = {
 				{ position = {0, -1} },
 				{ position = {1, 0} },
@@ -1001,7 +923,7 @@ data:extend(
 			mining_time = 0.1,
 			result = "plastic-pipe-to-ground"
 		},
-		max_health = 150,
+		max_health = 180,
 		corpse = "small-remnants",
 		resistances = {
 			{ type = "fire", percent = 50 }
@@ -1011,6 +933,7 @@ data:extend(
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box = {
 			base_area = 1,
+      height = 2,
 			pipe_covers = adamo.pipecoverspictures("plastic"),
 			pipe_connections = {
 				{ position = {0, -1} },
@@ -1025,6 +948,89 @@ data:extend(
 			scale = 0.5
 		},
 		pictures = adamo.pipetogroundpictures("plastic"),
+	},
+    {
+		type = "pipe",
+		name = "concrete-pipe",
+		icon = "__xtreme-fishing__/graphics/icons/pipe/concrete-pipe.png",
+		icon_size = 32,
+		flags = {"placeable-neutral", "player-creation"},
+		minable = {
+			hardness = 0.3,
+			mining_time = 0.3,
+			result = "concrete-pipe"
+		},
+		max_health = 150,
+		corpse = "small-remnants",
+		resistances = {
+      { type = "fire", percent = 80 }
+		},
+		fast_replaceable_group = "pipe",
+		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
+		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+		fluid_box = {
+			base_area = 1,
+			height = 4,
+			pipe_connections = {
+				{ position = {0, -1} },
+				{ position = {1, 0} },
+				{ position = {0, 1} },
+				{ position = {-1, 0} }
+			},
+		},
+		pictures = adamo.pipepictures("concrete"),
+		working_sound = {
+			sound = {
+				{ filename = "__base__/sound/pipe.ogg", volume = 0.65 }
+			},
+			match_volume_to_activity = true,
+			max_sounds_per_type = 3
+		},
+		horizontal_window_bounding_box = {
+			{-0.25, -0.25},
+			{0.25, 0.15625}
+		},
+		vertical_window_bounding_box = {
+			{-0.28125, -0.40625},
+			{0.03125, 0.125}
+		},
+	},
+	{
+		type = "pipe-to-ground",
+		name = "concrete-pipe-to-ground",
+		icon = "__xtreme-fishing__/graphics/icons/pipe/concrete-pipe-to-ground.png",
+		icon_size = 32,
+		flags = {"placeable-neutral", "player-creation"},
+		minable = {
+			hardness = 0.3,
+			mining_time = 0.3,
+			result = "concrete-pipe-to-ground"
+		},
+		max_health = 225,
+		corpse = "small-remnants",
+		resistances = {
+			{ type = "fire", percent = 80 }
+		},
+		fast_replaceable_group = "pipe",
+		collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
+		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+		fluid_box = {
+			base_area = 1,
+			height = 4,
+			pipe_covers = adamo.pipecoverspictures("concrete"),
+			pipe_connections = {
+				{ position = {0, -1} },
+				{ position = {0, 1}, max_underground_distance = 10 }
+			},
+		},
+		underground_sprite = {
+			filename = "__core__/graphics/arrows/underground-lines.png",
+			priority = "extra-high-no-scale",
+			width = 64,
+			height = 64,
+			scale = 0.5
+		},
+		pictures = adamo.pipetogroundpictures("concrete"),
 	},
 })
 

@@ -85,3 +85,7 @@ for fish,t in pairs(data.raw.fish) do
     table.insert(data.raw.technology["se-lifesupport-facility"].effects, { type = "unlock-recipe", recipe = "se-lifesupport-canister-" .. fish })
   end
 end
+
+-- pipe stack size based on settings
+data.raw.item["se-space-pipe"].stack_size = settings.startup["xtreme-fishing-pipestacksize"].value
+data.raw.item["se-space-pipe-to-ground"].stack_size = settings.startup["xtreme-fishing-ugpipestacksize"].value

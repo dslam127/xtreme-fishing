@@ -1,22 +1,54 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.9
+Date: 2022-4-25
+  Info:
+    - This update is all about pipes. Everything else seems to be working as intended.
+  Changes:
+    - Added setting for pipe and underground pipe stacks size
+      stack size for pipes in Krastorio2 and Space Exploration are also affected
+      please note: space pipe junctions are not affected.
+    - New default pipe stack sizes (more vanilla)
+      straight pipes = 100
+      pipe to ground = 50
+  Balancing:
+    - Pipe Throughput
+      stone     = 50
+      copper    = 75
+      iron      = 100
+      plastic   = 200
+      concrete  = 400
+---------------------------------------------------------------------------------------------------
+Version: 0.2.8
+Date: 2022-4-16
+  Changes:
+    - Allow growing recipes in Krastorio2 and SeaTorio greenhouses (GreenTec)
+    - Allow coking recipes in foundry when SeaTorio mod installed (GreenTec)
+    - Recipe unlock biomethanol-fish recipes with gas power station research (Krastorio2)
+    - Using jellyfish to repair or heal has a negative effect (repair-fish)
+  Balancing:
+    - Hitpoints of pipes are based on the construction material
+  Bugfixes:
+    - Removed other salmon when more-fish and repair-fish mods installed
+---------------------------------------------------------------------------------------------------
+Version: 0.2.7
+Date: 2022-4-3
+  Changes:
+    - Added cooked fish recipes for modded fish (GreenTec)
+  Optimisations:
+    - Use cooked fish mod recipes instead of GreenTec's cooked fish recipes when both are installed
+---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 Date: 2022-4-3
-  Graphics
-    - added missing texture for jellyfish (fish-lube)
----------------------------------------------------------------------------------------------------
-Version: 0.2.5
-Date: 2022-4-2
-  Bugfixes:
-    - quickfix fish were not unlocking when tech completed (SeaTorio)
----------------------------------------------------------------------------------------------------
-Version: 0.2.4
-Date: 2022-4-2
   Info:
     - Added support for GreenTec
   Changes:
-    - Added fish to biomass recipes (GreenTec)
-    - Added fish to fertilizer recipes (Krastorio2)
-    - Removed recipes that used fish instead of fertilizer to make wood (Krastorio2)
+    - Added biomass recipes for modded fish (GreenTec)
+    - Added fertilizer recipes for modded fish (Krastorio2)
+    - Deprecated recipes that used fish to make wood (Krastorio2)
+  Graphics:
+    - Added missing texture for jellyfish (fish-lube)
+  Bugfixes:
+    - Fixed fish recipes not unlocking when tech completed (SeaTorio)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2022-4-1
@@ -24,7 +56,7 @@ Date: 2022-4-1
     - Added new fish jellyfish
   Graphics:
     - Added jellyfish icon mipmaps
-  Optimizations:
+  Optimisations:
     - Concealed settings relating to inactive mods
     - Concealed settings from Advanced Fishing mod (no function)
 ---------------------------------------------------------------------------------------------------
@@ -36,7 +68,7 @@ Date: 2022-3-30
     - Added first aid kit recipes for Krastorio2
     - Added biomethanol recipes for Krastorio2
     - Changed farm recipe yield based on a new calculation
-  Optimizations:
+  Optimisations:
     - Code tidying and cleanup
     - Revised changelog
 ---------------------------------------------------------------------------------------------------
@@ -67,7 +99,7 @@ Date: 2022-3-22
     - Added setting for crab processing fluid type
   Graphics:
     - Added new icons for fish lube recipes
-  Optimizations:
+  Optimisations:
     - Code tidying and cleanup
     - Standardized functions to allow adding more modded fish
     - Organized settings
@@ -81,9 +113,8 @@ Date: 2022-3-19
     - Added setting to adjust yield from production cycle
   Graphics:
     - Added mipmaps for better compatibilty
-  Optimizations:
+  Optimisations:
     - Added auto calculation of ingredients for production cycle
-    - Updated locale/en
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2022-03-19
@@ -91,7 +122,7 @@ Date: 2022-03-19
     - All fish types now spawn in the water on new map creation
   Changes:
     - Added setting to toggle pipes
-  Optimizations:
+  Locale:
     - Renamed pipe names to be more vanilla
   Bugfixes:
     - Fixed typo in data.lua
@@ -111,7 +142,7 @@ Date: 2022-03-15
     - Added ability to cook all fish types using the cooked-fish mod 
     - Added ability to produce "more-fish" in the fish farm
     - Added support for Fish_Lube mod to allow multiple types of fish
-  Changes:  
+  Changes:
     - Added recipe extract light oil from squid
     - Added recipe extract petroleum-gas from pufferfish
     - Added recipe smelting pufferfish results in coal (amount can be changed in settings)
@@ -119,5 +150,5 @@ Date: 2022-03-15
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 2022-03-14
-  Changes:
+  Info:
     - Initial release on mod portal

@@ -4,7 +4,7 @@ if script.active_mods["repair-fish"] then
       local player = game.get_player(event.player_index)
       local selected = player.selected
       if selected and selected.health then
-        selected.health = selected.health + 80
+        selected.health = selected.health - 60
       end
     end
     if event.item.name == "raw-flounder" then
@@ -14,7 +14,7 @@ if script.active_mods["repair-fish"] then
         selected.health = selected.health + 80
       end
     end
-    if event.item.name == "raw-salmon" then
+    if event.item.name == "raw-salmon" and not script.active_mods["more-fish"] then
       local player = game.get_player(event.player_index)
       local selected = player.selected
       if selected and selected.health then
@@ -25,7 +25,14 @@ if script.active_mods["repair-fish"] then
       local player = game.get_player(event.player_index)
       local selected = player.selected
       if selected and selected.health then
-        selected.health = selected.health + 80
+        selected.health = selected.health + 100 
+      end
+    end
+    if event.item.name == "raw-jellyfish" then
+      local player = game.get_player(event.player_index)
+      local selected = player.selected
+      if selected and selected.health then
+        selected.health = selected.health - 120
       end
     end
   end)

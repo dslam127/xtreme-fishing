@@ -16,3 +16,8 @@ end
 -- hide AF settings
 data.raw["bool-setting"]["bigger-nuclear-cell-stacks"].hidden = true
 data.raw["bool-setting"]["bigger-cargo"].hidden = true
+
+-- disable GreenTec cooked fish if cooked fish is installed
+if mods["GreenTec"] and mods["factorio-cooked-fish"] then
+  data.raw["bool-setting"]["fried-fish"].default_value = false
+end
