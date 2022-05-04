@@ -1,3 +1,7 @@
+-- allow seedling to be used as a fuel
+data.raw.item["seedling"].fuel_category = "chemical"
+data.raw.item["seedling"].fuel_value = "325kJ"
+
 local add_biomass_from = function(fish)
   local recipe = table.deepcopy(data.raw.recipe["biomass"])
   if recipe ~= nil then

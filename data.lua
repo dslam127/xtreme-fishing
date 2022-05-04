@@ -43,3 +43,7 @@ end
 if mods["GreenTec"] then
   require("prototypes.mods.GreenTec")
 end
+
+if mods["fire-place"] then
+  require("prototypes.mods.fire_place")
+end

@@ -1,4 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2022-5-4
+  Info:
+    - Added Support for the Fire-Place (campfire) mod 
+  Changes:
+    - Allowed cooked fish recipes to be made in the campfire
+      also removes the ability to "smelt" fish in forges
+    - Added match recipe
+      recipe located in tools section near the repair pack recipe
+      one coal and one wood make a stack of matches (100)
+    - Added light-campfire recipe which allows campfire to burn using matches
+      single match will keep a campfire burning for 14.4 minutes
+      stack of matches will keep a campfire burning for 24hrs
+      will not produce anything but requires fuel to keep burning
+    - Added Seedling to chemical fuel category (GreenTec)
+  Graphics:
+    - Added reduced match icon
+      source: https://www.pngfind.com/mpng/bbTmxh_match-matches-fire-vector-matchbox-cartoon-safety-match/)
+    - Added modified campfire/match icon
+      source: https://www.clipartmax.com/middle/m2i8N4d3G6H7m2m2_background-campfire-png-images-transparent-camp-fire/
+---------------------------------------------------------------------------------------------------
 Version: 0.2.9
 Date: 2022-4-25
   Info:
@@ -34,7 +55,7 @@ Version: 0.2.7
 Date: 2022-4-3
   Changes:
     - Added cooked fish recipes for modded fish (GreenTec)
-  Optimisations:
+  Optimizations:
     - Use cooked fish mod recipes instead of GreenTec's cooked fish recipes when both are installed
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
@@ -56,7 +77,7 @@ Date: 2022-4-1
     - Added new fish jellyfish
   Graphics:
     - Added jellyfish icon mipmaps
-  Optimisations:
+  Optimizations:
     - Concealed settings relating to inactive mods
     - Concealed settings from Advanced Fishing mod (no function)
 ---------------------------------------------------------------------------------------------------
@@ -68,7 +89,7 @@ Date: 2022-3-30
     - Added first aid kit recipes for Krastorio2
     - Added biomethanol recipes for Krastorio2
     - Changed farm recipe yield based on a new calculation
-  Optimisations:
+  Optimizations:
     - Code tidying and cleanup
     - Revised changelog
 ---------------------------------------------------------------------------------------------------
@@ -99,7 +120,7 @@ Date: 2022-3-22
     - Added setting for crab processing fluid type
   Graphics:
     - Added new icons for fish lube recipes
-  Optimisations:
+  Optimizations:
     - Code tidying and cleanup
     - Standardized functions to allow adding more modded fish
     - Organized settings
@@ -113,7 +134,7 @@ Date: 2022-3-19
     - Added setting to adjust yield from production cycle
   Graphics:
     - Added mipmaps for better compatibilty
-  Optimisations:
+  Optimizations:
     - Added auto calculation of ingredients for production cycle
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
