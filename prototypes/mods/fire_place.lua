@@ -1,18 +1,9 @@
--- allow cooked fish to be made in the campfire (note: removes ability to cook fish in forge)
-for fish,v in pairs(data.raw.fish) do
-  
-  if mods["factorio-cooked-fish"] then
-    data.raw.recipe["cooked-" .. fish .. "-recipe"].category = "cooking"
-  end
-  
-  if mods["GreenTec"] and settings.startup["fried-fish"].value == true then
-    data.raw.recipe["fried-" .. fish].category = "cooking"
-  end
-    
-end
-
 -- add match item and recipe which allows campfire to burn without producing any results
 data:extend({
+  { -- new category for cooking over the campfire
+    type = "recipe-category",
+    name = "cf-cooking"
+  },
   {
     type = "item",
     name = "match",
@@ -51,4 +42,18 @@ data:extend({
     order = "z[light-campfire]"
   }
 })
+
+table.insert(data.raw.furnace["camp-fire"].crafting_categories, "cf-cooking")
   
+-- allow cooked fish to be made in the campfire (note: removes ability to cook fish in forge)
+for fish,v in pairs(data.raw.fish) do
+  
+  if mods["factorio-cooked-fish"] then
+    data.raw.recipe["cooked-" .. fish .. "-recipe"].category = "cf-cooking"
+  end
+  
+  if mods["GreenTec"] and settings.startup["fried-fish"].value == true then
+    data.raw.recipe["fried-" .. fish].category = "cf-cooking"
+  end
+    
+end

@@ -4,21 +4,30 @@ Date: 2022-5-4
   Info:
     - Added Support for the Fire-Place (campfire) mod 
   Changes:
-    - Allowed cooked fish recipes to be made in the campfire
-      also removes the ability to "smelt" fish in forges
-    - Added match recipe
+    - Added new crafting category for campfire cooking (cf-cooking)
+    - Added match item/recipe
       recipe located in tools section near the repair pack recipe
-      one coal and one wood make a stack of matches (100)
+      one coal and one wood required to craft a box of matches (100)
     - Added light-campfire recipe which allows campfire to burn using matches
       single match will keep a campfire burning for 14.4 minutes
       stack of matches will keep a campfire burning for 24hrs
       will not produce anything but requires fuel to keep burning
-    - Added Seedling to chemical fuel category (GreenTec)
+    - Allowed cooked fish recipes to be made in the campfire
+      also removes the ability to "smelt" fish in any forges
+    - Added seedling as a chemical fuel with a low fuel value (GreenTec)
   Graphics:
-    - Added reduced match icon
+    - Added match icon
       source: https://www.pngfind.com/mpng/bbTmxh_match-matches-fire-vector-matchbox-cartoon-safety-match/)
-    - Added modified campfire/match icon
+    - Added campfire icon
       source: https://www.clipartmax.com/middle/m2i8N4d3G6H7m2m2_background-campfire-png-images-transparent-camp-fire/
+  Optimizations:
+    - GreenTec fertiliser merged into Krastorio2 fertilizer
+      unintended bug: the Gt fertilizer still shows in the menu but is irrelevant
+  Balancing:
+    - less refined fuel required to craft biofuel
+      originally biofuel 25*15Mj=375Mj where refined fuel was 25*20Mj=500Mj
+      new biofuel 25*15Mj=375Mj and refined fuel 15*20Mj=300Mj recipe gives minor increase of 75Mj
+      biomass and nitrogen are still required ingredients
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.9
 Date: 2022-4-25
