@@ -128,6 +128,14 @@ data:extend({
     default_value = "lubricant",
     allowed_values = { "lubricant", "petroleum-gas", "steam", "sulfuric-acid" },
     order = "ad[fishlube-crabcatalyst]",
+  },
+  {
+    type = "bool-setting",
+    name = "xtreme-fishing-campfire-cooking",
+    setting_type = "startup",
+    hidden = true,
+    default_value = true,
+    order = "ac[campfire-cooking]",
   }
 })
 
@@ -135,6 +143,11 @@ data:extend({
 if mods["factorio-cooked-fish"] then
   data.raw["string-setting"]["xtreme-fishing-puffer_type"].hidden = false
   data.raw["int-setting"]["xtreme-fishing-puffer_yield"].hidden = false
+end
+
+-- campfire settings (fire-place)
+if mods["fire-place"] and (mods["GreenTec"] or mods["factorio-cooked-fish"]) then
+  data.raw["bool-setting"]["xtreme-fishing-campfire-cooking"].hidden = false
 end
 
 -- fish lube settings

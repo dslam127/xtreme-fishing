@@ -43,17 +43,22 @@ data:extend({
   }
 })
 
-table.insert(data.raw.furnace["camp-fire"].crafting_categories, "cf-cooking")
+-- setting hidden unless either cooked fish or GreenTec mods installed
+if settings.startup["xtreme-fishing-campfire-cooking"].value == true then
+
+  table.insert(data.raw.furnace["camp-fire"].crafting_categories, "cf-cooking")
   
--- allow cooked fish to be made in the campfire (note: removes ability to cook fish in forge)
-for fish,v in pairs(data.raw.fish) do
-  
-  if mods["factorio-cooked-fish"] then
-    data.raw.recipe["cooked-" .. fish .. "-recipe"].category = "cf-cooking"
-  end
-  
-  if mods["GreenTec"] and settings.startup["fried-fish"].value == true then
-    data.raw.recipe["fried-" .. fish].category = "cf-cooking"
-  end
+  -- allow cooked fish to be made in the campfire (note: removes ability to cook fish in forge)
+  for fish,v in pairs(data.raw.fish) do
     
+    if mods["factorio-cooked-fish"] then
+      data.raw.recipe["cooked-" .. fish .. "-recipe"].category = "cf-cooking"
+    end
+    
+    if mods["GreenTec"] and settings.startup["fried-fish"].value == true then
+      data.raw.recipe["fried-" .. fish].category = "cf-cooking"
+    end   
+  
+  end
+  
 end
