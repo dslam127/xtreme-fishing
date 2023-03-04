@@ -5,6 +5,7 @@ Date: 2023-3-4
     - Quickfix for using fish to make first aid kits in Krastorio2 mod
   Changes:
     - Merged patch by Nihilistzsche to restore Krastorio2 compatability
+    - Removed hidden .git directory (saved 2mb of space)
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2022-5-4
