@@ -49,12 +49,19 @@ local add_first_aid = function(fish)
     recipe.icon_mipmaps = 4
     recipe.enabled = "true"
     local element = 1
-    for _,v in pairs(recipe.ingredients) do
+    for _,v in pairs(recipe.normal.ingredients) do
       if v.name then element = 'name' end
       if v[element] == "biomass" then 
         v[element] = "raw-" .. fish
       end
     end
+	local element = 1
+	for _,v in pairs(recipe.expensive.ingredients) do
+	  if v.name then element = 'name' end
+	  if v[element] == "biomass" then
+		v[element] = "raw-" .. fish
+	  end
+	end
     recipe.localised_name = "First aid kit"
   end
   return recipe
